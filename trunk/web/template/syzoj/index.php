@@ -48,6 +48,18 @@
             </div>
         </div>
         <div class="right floated five wide column">
+            <h4 class="ui top attached block header"><i class="ui search icon"></i><?php echo $MSG_SEARCH;?></h4>
+            <div class="ui bottom attached segment">
+                <form action="problem.php" method="get">
+                    <div class="ui search" style="width: 100%; ">
+                        <div class="ui left icon input" style="width: 100%; ">
+                            <input class="prompt" style="width: 100%; " type="text" placeholder="<?php echo $MSG_PROBLEM_ID ;?> …" name="id">
+                            <i class="search icon"></i>
+                        </div>
+                        <div class="results" style="width: 100%; "></div>
+                    </div>
+                </form>
+            </div>
             <h4 class="ui top attached block header"><i class="ui rss icon"></i> <?php echo $MSG_RECENT_PROBLEM;?> </h4>
             <div class="ui bottom attached segment">
                 <table class="ui very basic center aligned table">
@@ -73,18 +85,6 @@
                     ?>
                     </tbody>
                 </table>
-            </div>
-            <h4 class="ui top attached block header"><i class="ui search icon"></i><?php echo $MSG_SEARCH;?></h4>
-            <div class="ui bottom attached segment">
-                <form action="problem.php" method="get">
-                    <div class="ui search" style="width: 100%; ">
-                        <div class="ui left icon input" style="width: 100%; ">
-                            <input class="prompt" style="width: 100%; " type="text" placeholder="<?php echo $MSG_PROBLEM_ID ;?> …" name="id">
-                            <i class="search icon"></i>
-                        </div>
-                        <div class="results" style="width: 100%; "></div>
-                    </div>
-                </form>
             </div>
             <h4 class="ui top attached block header"><i class="ui calendar icon"></i><?php echo $MSG_RECENT_CONTEST ;?></h4>
             <div class="ui bottom attached center aligned segment">
