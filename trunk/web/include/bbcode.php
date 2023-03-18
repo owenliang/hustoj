@@ -314,7 +314,7 @@ class BBCode
 	    $output = $output . '<div class="col-xs-12 col-lg-12"><div class="panel '.$plist_color[$colorIndex%count($plist_color)].'">'
 				.'<div class="panel-heading" onclick="$(\'#plist'.$colorIndex.'\').load(\'problemset.php?ajax=1&list='.$url.'\').toggle()"  style="cursor: pointer" >'
 		                .'<h4 class="panel-title" ><a class="collapsed" href="problemset.php?list=' . $url . '"  target="_blank">' 
-		    		. self::encode($buffer) . '</a> <span class="pull-right">'.$MSG_TOTAL.' '.$pnum.' '.$MSG_NUMBER_OF_PROBLEMS.'</span> </h4> '
+		    		. self::encode($buffer) . '</a> <span class="pull-right">'.$MSG_TOTAL.' '.$pnum.' '.$MSG_NUMBER_OF_PROBLEMS.'(点此展开)</span> </h4> '
 				.' </div><div id="plist'.$colorIndex.'"  style="display:none"  > </div></div></div>';
 	    $colorIndex++;
             // advance ptr (again)
