@@ -24,7 +24,7 @@
 
                 ?>
 
-                    <img style="margin-top: -100%; " src="<?php echo $grav_url; ?>">
+                    <!--<img style="margin-top: -100%; " src="<?php echo $grav_url; ?>">-->
                 </div>
                 <div class="content">
                     <div class="header"><?php echo $nick?></div>

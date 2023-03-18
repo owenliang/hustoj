@@ -1,0 +1,5 @@
+core
+docker
+install
+web/upload
+web/include/db_info.inc.php

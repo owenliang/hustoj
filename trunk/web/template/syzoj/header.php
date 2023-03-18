@@ -33,7 +33,9 @@
                   $url!='registerpage.php'
                   ) && !isset($_SESSION[$OJ_NAME.'_'.'user_id'])){
 
-           header("location:".$path_fix."loginpage.php");
+           //header("location:".$path_fix."loginpage.php");
+           //单点登录
+           header("location:https://oj.kids123code.com/login_class.php");
            exit();
         }
 
