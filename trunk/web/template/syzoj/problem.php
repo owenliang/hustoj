@@ -342,4 +342,11 @@ div[class*=ace_br] {
 }
 </style>
 
+<link rel="stylesheet" href="template/syzoj/katex/katex.min.css">
+<script src="template/syzoj/katex/katex.min.js"></script>
+<script>
+  $('.katex').each(function() {
+    katex.render($(this).html(), this);
+  })
+</script>
 <?php } ?>
