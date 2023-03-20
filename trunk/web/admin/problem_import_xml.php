@@ -250,11 +250,12 @@ function import_fps($tempfile)
         $base64 = getValue($img, "base64");
         $ext = pathinfo($src);
         $ext = strtolower($ext['extension']);
-
-        if (!stristr(",jpeg,jpg,svg,png,gif,bmp", $ext)) {
-          $ext = "bad";
-          exit(1);
-        }
+        if(empty($ext)) $ext='';
+        //if (!stristr(",jpeg,jpg,svg,png,gif,bmp", $ext)) {
+        //  $ext = "";
+          //exit(1);
+          // continue;
+        //}
 
         $testno++;
 

@@ -88,7 +88,7 @@
 	$MSG_TR="测试运行";
 	$MSG_MC="待裁判确认";
 	$MSG_RESET="重置";	
-	
+	$MSG_SUB='提交中';
 	//problemset.php
 	$MSG_SEARCH="查找";
 	$MSG_PROBLEM_ID="题目编号";
