@@ -1,7 +1,16 @@
 <?php
+
+function updateProblem($pid, $title, $time_limit, $memory_limit, $description, $input, $output, $sample_input, $sample_output, $hint, $source, $spj, $OJ_DATA) {
+  //$spj=($spj);
+  $sql = "UPDATE `problem` set `title`=?,`time_limit`=?,`memory_limit`=?,`description`=?,`input`=?,`output`=?,`sample_input`=?,`sample_output`=?,`hint`=?,`source`=?,`spj`=?,`in_date`=NOW(),`defunct`=? WHERE problem_id=?";
+  //echo $sql;
+  pdo_query($sql, $title, $time_limit, $memory_limit, $description, $input, $output, $sample_input, $sample_output, $hint, $source, $spj, 'N',$pid);
+  return $pid;
+}
+
 function addproblem($title, $time_limit, $memory_limit, $description, $input, $output, $sample_input, $sample_output, $hint, $source, $spj, $OJ_DATA) {
   //$spj=($spj);
-  $sql = "INSERT INTO `problem` (`title`,`time_limit`,`memory_limit`,`description`,`input`,`output`,`sample_input`,`sample_output`,`hint`,`source`,`spj`,`in_date`,`defunct`) VALUES(?,?,?,?,?,?,?,?,?,?,?,NOW(),'Y')";
+  $sql = "INSERT INTO `problem` (`title`,`time_limit`,`memory_limit`,`description`,`input`,`output`,`sample_input`,`sample_output`,`hint`,`source`,`spj`,`in_date`,`defunct`) VALUES(?,?,?,?,?,?,?,?,?,?,?,NOW(),'N')";
   //echo $sql;
   $pid = pdo_query($sql, $title, $time_limit, $memory_limit, $description, $input, $output, $sample_input, $sample_output, $hint, $source, $spj);
 
@@ -27,6 +36,7 @@ function addproblem($title, $time_limit, $memory_limit, $description, $input, $o
   }
   return $pid;
 }
+
 
 function mkdata($pid, $filename, $input, $OJ_DATA) {
   $basedir = "$OJ_DATA/$pid";
