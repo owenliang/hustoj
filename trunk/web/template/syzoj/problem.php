@@ -341,12 +341,12 @@ div[class*=ace_br] {
   font-size: 18px;
 }
 </style>
-
+<?php } ?>
 <link rel="stylesheet" href="template/syzoj/katex/katex.min.css">
 <script src="template/syzoj/katex/katex.min.js"></script>
+<script defer  src="template/syzoj/katex/contrib/auto-render.js"></script>
 <script>
-  $('.katex').each(function() {
+  $('.katex').not('.katex-no-js').each(function() {
     katex.render($(this).html(), this);
-  })
+  });
 </script>
-<?php } ?>
