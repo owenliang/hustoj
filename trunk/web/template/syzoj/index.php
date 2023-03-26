@@ -60,32 +60,6 @@
                     </div>
                 </form>
             </div>
-            <h4 class="ui top attached block header"><i class="ui rss icon"></i> <?php echo $MSG_RECENT_PROBLEM;?> </h4>
-            <div class="ui bottom attached segment">
-                <table class="ui very basic center aligned table">
-                    <thead>
-                        <tr>
-                            <th width="60%"><?php echo $MSG_TITLE;?></th>
-                            <th width="40%"><?php echo $MSG_TIME;?></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                        $sql_problems = "select * FROM `problem` where defunct='N' ORDER BY `problem_id` DESC LIMIT 5";
-                        $result_problems = mysql_query_cache( $sql_problems );
-                        if ( $result_problems ) {
-                            $i = 1;
-                            foreach ( $result_problems as $row ) {
-                                echo "<tr>"."<td>"
-                                    ."<a href=\"problem.php?id=".$row["problem_id"]."\">"
-                                    .$row["title"]."</a></td>"
-                                    ."<td>".substr($row["in_date"],0,10)."</td>"."</tr>";
-                            }
-                        }
-                    ?>
-                    </tbody>
-                </table>
-            </div>
             <h4 class="ui top attached block header"><i class="ui calendar icon"></i><?php echo $MSG_RECENT_CONTEST ;?></h4>
             <div class="ui bottom attached center aligned segment">
                 <table class="ui very basic center aligned table">
@@ -106,6 +80,32 @@
                                     ."<a href=\"contest.php?cid=".$row["contest_id"]."\">"
                                     .$row["title"]."</a></td>"
                                     ."<td>".$row["start_time"]."</td>"."</tr>";
+                            }
+                        }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="ui top attached block header"><i class="ui rss icon"></i> <?php echo $MSG_RECENT_PROBLEM;?> </h4>
+            <div class="ui bottom attached segment">
+                <table class="ui very basic center aligned table">
+                    <thead>
+                        <tr>
+                            <th width="60%"><?php echo $MSG_TITLE;?></th>
+                            <th width="40%"><?php echo $MSG_TIME;?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        $sql_problems = "select * FROM `problem` where defunct='N' ORDER BY `problem_id` DESC LIMIT 5";
+                        $result_problems = mysql_query_cache( $sql_problems );
+                        if ( $result_problems ) {
+                            $i = 1;
+                            foreach ( $result_problems as $row ) {
+                                echo "<tr>"."<td>"
+                                    ."<a href=\"problem.php?id=".$row["problem_id"]."\">"
+                                    .$row["title"]."</a></td>"
+                                    ."<td>".substr($row["in_date"],0,10)."</td>"."</tr>";
                             }
                         }
                     ?>
